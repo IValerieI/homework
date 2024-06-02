@@ -21,7 +21,11 @@ public class Logger {
     }
 
     public void classLogg(Object obj, String info) {
-        System.out.println("Log info: " + getTodayDate() + " - " + obj.getClass().getSimpleName() + " - " + info);
+        if (obj == null) {
+            System.out.println("Object shouldn't be null");
+        } else {
+            System.out.println("Log info: " + getTodayDate() + " - " + obj.getClass().getSimpleName() + " - " + info);
+        }
     }
 
     private static String getTodayDate() {
