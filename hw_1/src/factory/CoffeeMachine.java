@@ -14,7 +14,7 @@ public class CoffeeMachine {
         CoffeeFactory coffeeFactory = new CoffeeFactory();
         Coffee coffee = coffeeFactory.getCoffee(coffeeType);
 
-        System.out.println("\n" + coffee.getName());
+        System.out.println("\nCoffee machine works" );
 
         setGrindSize(coffee.getGrindSize());
         grindingMachine.grind(coffee);
@@ -34,7 +34,7 @@ public class CoffeeMachine {
     }
 
     private void setGrindSize(String grindSize) {
-        System.out.println(grindSize + " consistency");
+        grindingMachine.setGrind(grindSize);
     }
 
     private void brewCoffee() {

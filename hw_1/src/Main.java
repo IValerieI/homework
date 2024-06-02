@@ -1,3 +1,6 @@
+import adapter.Computer;
+import adapter.MemoryCard;
+import adapter.MemoryCardAdapter;
 import factory.CoffeeFactory;
 import factory.CoffeeMachine;
 import factory.CoffeeType;
@@ -11,6 +14,7 @@ public class Main {
     public static void main(String[] args) {
         testSingleton();
         testFactory();
+        testAdapter();
 
 
     }
@@ -25,4 +29,12 @@ public class Main {
         CoffeeMachine coffeeMachine = new CoffeeMachine(grindingMachine);
         coffeeMachine.start(CoffeeType.AMERICANO);
     }
+
+    private static void testAdapter() {
+        MemoryCard memoryCard = new MemoryCard();
+        MemoryCardAdapter adapter = new MemoryCardAdapter(memoryCard);
+        Computer computer = new Computer();
+        computer.readFrom(adapter);
+    }
+
 }
